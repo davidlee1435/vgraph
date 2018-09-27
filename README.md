@@ -1,11 +1,14 @@
 # Lab 3 - Visibility Graph Path Planning
-Lab 3 for COMSW4733 Computational Aspects of Robotics at Columbia University (Instructor: Prof. Peter Allen).
+Lab 3 for [COMSW4733 Computational Aspects of Robotics](http://www.cs.columbia.edu/~allen/F18/index.html) at Columbia University (Instructor: [Prof. Peter Allen](http://www.cs.columbia.edu/~allen/)).
 
 ## Introduction
-In this lab, you are required to implement visibility graph path planning algorithm using the Arbotix simulator and visualize the graph and robot path following in RViz.
+In this lab, you are required to implement visibility graph path planning algorithm using the ArbotiX simulator and visualize the graph and robot path following in RViz.
 
 ## Usage
 This repo is a ROS package that you can add to your own catkin workspace to create a map with obstacles (map.png + map.yaml) and load it in RViz. It allows you to custom your map with any shape of polygon obstacles. All length unit we use is in **cm**.
+
+### Prerequisites
+The package is tested on `python 2.7`, `ROS Indigo`, `Ubuntu 14.04` with `OpenCV 3.1.0` and `numpy 1.15.1`. You should also have the [ros-by-example](https://github.com/pirobot/rbx1.git) code already installed.
 
 ### Files
 - `data/world_obstacles.txt`: Text file indicating obstacle locations (in **cm**).
@@ -38,7 +41,9 @@ Then, start everything
 roslaunch vgraph launch.launch
 ```
 
-To custom obstacles and goal position, modify `/data/world_obstacles.txt` and `/data/goal.txt`, then
+Remeber to start a new terminal if you want to run other commands after this.
+
+To custom obstacles and goal position, modify `/data/world_obstacles.txt` and `/data/goal.txt`, then run the following commands. It will update the `map.png` image file loaded by `roslaunch`. You will need to re-launch everything to visualize the modified map in RViz.
 ```
 roscd vgraph/src
 python create_map.py
@@ -47,7 +52,7 @@ python create_map.py
 ## Instructions and Rubric
 You should add python files in `/src` to do this lab. The visualization should be done using [visualization_msgs/Marker](http://docs.ros.org/api/visualization_msgs/html/msg/Marker.html) or [visualization_msgs/MarkerArray](http://docs.ros.org/api/visualization_msgs/html/msg/MarkerArray.html) message (more about using RViz markers [here](http://wiki.ros.org/rviz/DisplayTypes/Marker)). We expect to see the following results in your demo video and from running your programs.
 
-- Bring up Arbotix turtlebot simulator and RViz with the map of obstacles and goal we give you (**20 points**)
+- Bring up ArbotiX turtlebot simulator and RViz with the map of obstacles and goal we give you (**20 points**)
 <p align="center">
   <img src="imgs/map.png">
 </p>
