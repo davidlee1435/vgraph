@@ -6,10 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /RobotModel1/Links1/base_footprint1
-        - /Map1
-        - /Inflated Obstacles1
         - /TF1/Frames1
-        - /Marker1
       Splitter Ratio: 0.652661
     Tree Height: 963
   - Class: rviz/Selection
@@ -410,168 +407,19 @@ Visualization Manager:
       Unreliable: false
       Value: false
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_footprint:
-          Value: false
-        base_link:
-          Value: false
-        camera_depth_frame:
-          Value: false
-        camera_depth_optical_frame:
-          Value: false
-        camera_link:
-          Value: false
-        camera_rgb_frame:
-          Value: false
-        camera_rgb_optical_frame:
-          Value: false
-        front_wheel_link:
-          Value: false
-        gyro_link:
-          Value: false
-        laser:
-          Value: false
-        left_cliff_sensor_link:
-          Value: false
-        left_wheel_link:
-          Value: false
-        leftfront_cliff_sensor_link:
-          Value: false
-        map:
-          Value: true
-        odom:
-          Value: false
-        plate_0_link:
-          Value: false
-        plate_1_link:
-          Value: false
-        plate_2_link:
-          Value: false
-        plate_3_link:
-          Value: false
-        rear_wheel_link:
-          Value: false
-        right_cliff_sensor_link:
-          Value: false
-        right_wheel_link:
-          Value: false
-        rightfront_cliff_sensor_link:
-          Value: false
-        spacer_0_link:
-          Value: false
-        spacer_1_link:
-          Value: false
-        spacer_2_link:
-          Value: false
-        spacer_3_link:
-          Value: false
-        standoff_2in_0_link:
-          Value: false
-        standoff_2in_1_link:
-          Value: false
-        standoff_2in_2_link:
-          Value: false
-        standoff_2in_3_link:
-          Value: false
-        standoff_2in_4_link:
-          Value: false
-        standoff_2in_5_link:
-          Value: false
-        standoff_2in_6_link:
-          Value: false
-        standoff_2in_7_link:
-          Value: false
-        standoff_8in_0_link:
-          Value: false
-        standoff_8in_1_link:
-          Value: false
-        standoff_8in_2_link:
-          Value: false
-        standoff_8in_3_link:
-          Value: false
-        standoff_kinect_0_link:
-          Value: false
-        standoff_kinect_1_link:
-          Value: false
-        wall_sensor_link:
-          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          odom:
-            base_footprint:
-              base_link:
-                front_wheel_link:
-                  {}
-                gyro_link:
-                  {}
-                laser:
-                  {}
-                left_cliff_sensor_link:
-                  {}
-                left_wheel_link:
-                  {}
-                leftfront_cliff_sensor_link:
-                  {}
-                plate_0_link:
-                  plate_1_link:
-                    plate_2_link:
-                      camera_link:
-                        camera_depth_frame:
-                          camera_depth_optical_frame:
-                            {}
-                        camera_rgb_frame:
-                          camera_rgb_optical_frame:
-                            {}
-                      plate_3_link:
-                        {}
-                      standoff_kinect_0_link:
-                        {}
-                      standoff_kinect_1_link:
-                        {}
-                rear_wheel_link:
-                  {}
-                right_cliff_sensor_link:
-                  {}
-                right_wheel_link:
-                  {}
-                rightfront_cliff_sensor_link:
-                  {}
-                spacer_0_link:
-                  {}
-                spacer_1_link:
-                  {}
-                spacer_2_link:
-                  {}
-                spacer_3_link:
-                  {}
-                standoff_2in_0_link:
-                  standoff_2in_4_link:
-                    standoff_8in_0_link:
-                      {}
-                standoff_2in_1_link:
-                  standoff_2in_5_link:
-                    standoff_8in_1_link:
-                      {}
-                standoff_2in_2_link:
-                  standoff_2in_6_link:
-                    standoff_8in_2_link:
-                      {}
-                standoff_2in_3_link:
-                  standoff_2in_7_link:
-                    standoff_8in_3_link:
-                      {}
-                wall_sensor_link:
-                  {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
     - Class: rviz/Marker
       Enabled: true
       Marker Topic: vgraph_markers
