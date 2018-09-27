@@ -2,7 +2,7 @@
 Lab 3 for [COMSW4733 Computational Aspects of Robotics](http://www.cs.columbia.edu/~allen/F18/index.html) at Columbia University (Instructor: [Prof. Peter Allen](http://www.cs.columbia.edu/~allen/)).
 
 ## Introduction
-In this lab, you are required to implement visibility graph path planning algorithm using the ArbotiX simulator and visualize the graph and robot path following in RViz.
+In this lab, you are required to implement visibility graph (vgraph) path planning algorithm using the ArbotiX turtlebot simulator and visualize the graph and robot path following in RViz.
 
 ## Usage
 This repo is a ROS package that you can add to your own catkin workspace to create a map with obstacles (`map.png` + `map.yaml`) and load it in RViz. It allows you to custom your map with any shape of polygon obstacles. All length unit we use is in **cm**.
@@ -12,10 +12,10 @@ The package is tested on `python 2.7`, `ROS Indigo`, `Ubuntu 14.04` with `OpenCV
 
 ### Files
 - `data/world_obstacles.txt`: Text file indicating obstacle locations (in **cm**).
-  - First line is the total number of world_obstacles
+  - First line is the total number of obstacles in the world.
   - Each obstacle starts with a number specifying total number of vertices, followed by these vertices' location in counter-clockwise order.
 - `data/goal.txt`: Location of the goal (in **cm**).
-- `src/create_map.py`: Creates a `map.png` under `maps/` folder, using obatacles and goal defined in the above files.
+- `src/create_map.py`: Creates or updates the `map.png` under `maps/` folder, using obatacles and goal defined in the above files.
 - `launch/launch.launch`: Launch file to start everything you need.
 - `maps/map.png`: Image of the map.
 - `maps/map.yaml`: Map metadata.
@@ -23,7 +23,7 @@ The package is tested on `python 2.7`, `ROS Indigo`, `Ubuntu 14.04` with `OpenCV
 - `world.rviz`: RViz configuration file.
 
 ### Map
-The map we use in RViz is 1200cm by 600cm, top left and bottom right are (-300, 300) and (900, -300). The start position of the robot is always at (0, 0), and the goal is defined in `data/goal.txt`. More about using the `map_server` package [here](http://wiki.ros.org/map_server).
+The map we use in RViz is 1200cm by 600cm, top left and bottom right are (-300, 300) and (900, -300) respectively. The start position of the robot is always at (0, 0), facing x-positive and the goal is defined in `data/goal.txt`. The obstacles are orange polygons and the goal is a purple dot. More about using the `map_server` package [here](http://wiki.ros.org/map_server).
 
 ### Run
 Clone this repo and compile it in your catkin workspace
@@ -52,12 +52,12 @@ python create_map.py
 ## Instructions and Rubric
 You should add python files in `/src` to do this lab. The visualization should be done using [visualization_msgs/Marker](http://docs.ros.org/api/visualization_msgs/html/msg/Marker.html) or [visualization_msgs/MarkerArray](http://docs.ros.org/api/visualization_msgs/html/msg/MarkerArray.html) message (more about using RViz markers [here](http://wiki.ros.org/rviz/DisplayTypes/Marker)). We expect to see the following results in your demo video and from running your programs.
 
-- Bring up ArbotiX turtlebot simulator and RViz with the map of obstacles and goal we give you (**20 points**)
+- Bring up ArbotiX turtlebot simulator and RViz with the map of obstacles and goal we give you. (**20 points**)
 <p align="center">
   <img src="imgs/map.png">
 </p>
 
-- Grow the obstacles using reflection algorithm (flip the robot around the reference point, place it at each vertex of the obstacle, and create a convex hull). You can assume the robot to be a 36cm-by-36cm square. You can pick the reference point anyware on this square. Given a list of 2d points, you are allowed to use any existing library/package to return a convex hull. My recommendation is [scipy.spatial.ConvexHull](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.ConvexHull.html). The following example picks the center as reference point. (**20 points**)
+- Grow the obstacles using reflection algorithm (flip the robot around the reference point, place it at each vertex of the obstacle, and create a convex hull). You can assume the robot to be a 36cm-by-36cm square. You can pick the reference point anyware on this square. Given a list of 2d points, you are allowed to use any existing library/package to return a convex hull. My recommendation is [scipy.spatial.ConvexHull](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.ConvexHull.html). The following example picks the center as the reference point. (**20 points**)
 <p align="center">
   <img src="imgs/growed.png">
 </p>
@@ -67,12 +67,12 @@ You should add python files in `/src` to do this lab. The visualization should b
   <img src="imgs/vgraph.png">
 </p>
 
-- Implement your own shortest path finding algorithm to find a shortest path from start to goal. Same as collision checker, you are **NOT** allowed to use any existing packages/libraries. (**20 points**)
+- Implement your own shortest path finding algorithm to find a shortest path from start to goal. Same as collision checker, you are **NOT** allowed to use any existing package/library. (**20 points**)
 <p align="center">
   <img src="imgs/path.png">
 </p>
 
-- Modify your robot constroller from Lab 1 and 2 to make the robot follow the path. (**20 points**)
+- Modify your robot controller from Lab 1 and 2 to make the robot follow the path. It is allowed to run this part in a separate program by copying/pasting the returned list of waypoints and feed into your follow-path function. (**20 points**)
 <p align="center">
   <img src="imgs/demohd.gif">
 </p>
@@ -82,7 +82,7 @@ You should add python files in `/src` to do this lab. The visualization should b
 - It should include all files that we need to reproduce your video demo.
 - Remeber to **delete** the `imgs/` folder as we do not need it and it is huge.
 - You should replace everything in the existing `README.md` with the following content:
-	- Usage: how to run your code to reproduce what you have in your video demo. Clearly explain the functionalities of all added scripts.
+	- Usage: how to run your code to reproduce your video demo. Clearly explain the functionalities of all added scripts.
 	- Method: a brief description of your methods.
 	- Video: a link to the Youtube video of a working demo
 	- Others: anything else you would like to include
