@@ -52,27 +52,27 @@ python create_map.py
 ## Instructions and Rubric
 You should add python files in `/src` to do this lab. The visualization should be done using [visualization_msgs/Marker](http://docs.ros.org/api/visualization_msgs/html/msg/Marker.html) or [visualization_msgs/MarkerArray](http://docs.ros.org/api/visualization_msgs/html/msg/MarkerArray.html) message (more about using RViz markers [here](http://wiki.ros.org/rviz/DisplayTypes/Marker)). We expect to see the following results in your demo video and from running your programs.
 
-- Bring up ArbotiX turtlebot simulator and RViz with the map of obstacles and goal we give you. (**20 points**)
+1. Bring up ArbotiX turtlebot simulator and RViz with the map of obstacles and goal we give you. (**20 points**)
 <p align="center">
   <img src="imgs/map.png">
 </p>
 
-- Grow the obstacles using reflection algorithm (flip the robot around the reference point, place it at each vertex of the obstacle, and create a convex hull). You can assume the robot to be a 36cm-by-36cm square. You can pick the reference point anyware on this square. Given a list of 2d points, you are allowed to use any existing library/package to return a convex hull. My recommendation is [scipy.spatial.ConvexHull](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.ConvexHull.html). The following example picks the center as the reference point. (**20 points**)
+2. Grow the obstacles using reflection algorithm (flip the robot around the reference point, place it at each vertex of the obstacle, and create a convex hull). You can assume the robot to be a 36cm-by-36cm square. You can pick the reference point anyware on this square. Given a list of 2d points, you are allowed to use any existing library/package to return a convex hull. My recommendation is [scipy.spatial.ConvexHull](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.ConvexHull.html). The following example picks the center as the reference point. (**20 points**)
 <p align="center">
   <img src="imgs/growed.png">
 </p>
 
-- Create the vgraph by first fully connecting all obstacle vertices + start + goal and then implement your own collision checker to remove edges that collides with obstacles (except endpoints). You are **NOT** allowed to use any existing libraries/packages for collision checking and the only package we expect to see in your collision checker is `numpy`. (**20 points**)
+3. Create the vgraph by first fully connecting all obstacle vertices + start + goal and then implement your own collision checker to remove edges that collides with obstacles (except endpoints). You are **NOT** allowed to use any existing libraries/packages for collision checking and the only package we expect to see in your collision checker is `numpy`. (**20 points**)
 <p align="center">
   <img src="imgs/vgraph.png">
 </p>
 
-- Implement your own shortest path finding algorithm to find a shortest path from start to goal. Same as collision checker, you are **NOT** allowed to use any existing package/library. (**20 points**)
+4. Implement your own shortest path finding algorithm to find a shortest path from start to goal. Same as collision checker, you are **NOT** allowed to use any existing package/library. (**20 points**)
 <p align="center">
   <img src="imgs/path.png">
 </p>
 
-- Modify your robot controller from Lab 1 and 2 to make the robot follow the path. It is allowed to run this part in a separate program by copying/pasting the returned list of waypoints and feed into your follow-path function. (**20 points**)
+5. Modify your robot controller from Lab 1 and 2 to make the robot follow the path. It is allowed to run this part in a separate program by copying/pasting the returned list of waypoints and feed into your follow-path function. (**20 points**)
 <p align="center">
   <img src="imgs/demohd.gif">
 </p>
