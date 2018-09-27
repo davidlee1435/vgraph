@@ -73,13 +73,12 @@ You should add python files in `/src` to do this lab. The visualization should b
 </p>
 
 ## Submission Guidelines
-- You should submit a `lab3_UNI1_UNI2.tar.gz` file which contains a folder named `lab3_UNI1_UNI2` and has the following structure (replace UNI with your actual UNI):
-	- `lab3_UNI1_UNI2/`
-		- `timed_out_and_back.py`: the main python script which starts the turtlebot controller
-		- (Optional) other python files that `timed_out_and_back.py` depends on
-		- `README.md`: a Markdown README file with the following sections:
-			- Usage: how to run the main script. If you have other python files, you should describe their functionalities.
-			- Method: a brief description of your methods
-			- Video: a link to the Youtube video of a working demo of Lab 1
-			- Others: anything else you would like to include
+- You should submit a `lab3_UNI1_UNI2.tar.gz` file which contains the modified package `vgraph` that you cloned.
+- It should include all files that we need to reproduce your video demo.
+- Remeber to **delete** the `imgs/` folder as we do not need it and it is huge.
+- You should replace everything in the existing `README.md` with the following content:
+	- Usage: how to run your code to reproduce what you have in your video demo. Clearly explain the functionalities of all added scripts.
+	- Method: a brief description of your methods.
+	- Video: a link to the Youtube video of a working demo
+	- Others: anything else you would like to include
 - **Violation of these submission instructions will result in point deduction.**
