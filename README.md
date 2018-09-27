@@ -5,7 +5,7 @@ Lab 3 for [COMSW4733 Computational Aspects of Robotics](http://www.cs.columbia.e
 In this lab, you are required to implement visibility graph path planning algorithm using the ArbotiX simulator and visualize the graph and robot path following in RViz.
 
 ## Usage
-This repo is a ROS package that you can add to your own catkin workspace to create a map with obstacles (map.png + map.yaml) and load it in RViz. It allows you to custom your map with any shape of polygon obstacles. All length unit we use is in **cm**.
+This repo is a ROS package that you can add to your own catkin workspace to create a map with obstacles (`map.png` + `map.yaml`) and load it in RViz. It allows you to custom your map with any shape of polygon obstacles. All length unit we use is in **cm**.
 
 ### Prerequisites
 The package is tested on `python 2.7`, `ROS Indigo`, `Ubuntu 14.04` with `OpenCV 3.1.0` and `numpy 1.15.1`. You should also have the [ros-by-example](https://github.com/pirobot/rbx1.git) code already installed.
