@@ -23,7 +23,7 @@ The package is tested on `python 2.7`, `ROS Indigo`, `Ubuntu 14.04` with `OpenCV
 - `world.rviz`: RViz configuration file.
 
 ### Map
-The map we use in RViz is 1200cm by 600cm, top left and bottom right are (-300, 300) and (900, -300) respectively. Also note that cells in the RViz grid is 50cm by 50cm. The start position of the robot is always at (0, 0), facing x-positive and the goal is defined in `data/goal.txt`. The obstacles are orange polygons and the goal is a purple dot. More about using the `map_server` package [here](http://wiki.ros.org/map_server).
+The map we use in RViz is 1200cm by 600cm, top left and bottom right are (-300, 300) and (900, -300) respectively. Also note that cells in the RViz grid are 50cm by 50cm. The start position of the robot is always at (0, 0), facing x-positive and the goal is defined in `data/goal.txt`. The obstacles are orange polygons and the goal is a purple dot. More about using the `map_server` package [here](http://wiki.ros.org/map_server).
 
 ### Run
 Clone this repo and compile it in your catkin workspace
