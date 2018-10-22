@@ -50,3 +50,4 @@ $ python lab3.py
 
 
 #### Video
+https://youtu.be/tuT9Vcz1MxA
